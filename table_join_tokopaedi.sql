@@ -42,7 +42,7 @@ join products p ON oi.product_id = p.id
 join shipping_agent sa on o.shipping_agent_id = sa.idshipping
 group by o.invoice, sa.shippingname , sa.defshippingfee , p.weight  ;
 
--- with total shipping for all items using sub-query
+-- with total shipping for all items with the same order_id using sub-query
 WITH ShippingTotals AS (
     SELECT
         o.order_id,
